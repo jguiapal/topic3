@@ -8,10 +8,10 @@
             string[] operators = { "+", "-", "*", "/" };
 
             Random random = new Random();
-            int numberOfItems = random.Next(5, 15);
+            float numberOfItems = random.Next(5, 15);
             double answer;
             double correctAns;
-            int totalScore = 0;
+            float totalScore = 0;
 
             Console.WriteLine("Total Number of items: " + numberOfItems);
 
@@ -55,11 +55,11 @@
                     if (correctAns == answer)
                     {
                         totalScore++;
-                        Console.WriteLine("Correct!");
+                        Console.WriteLine("Correct!\n");
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect! Correct answer: " + correctAns);
+                        Console.WriteLine("Incorrect! Correct answer: " + correctAns +"\n");
                     }
                     //if user enters an input proceed to next item
                     if (answer != null)
@@ -70,7 +70,11 @@
 
             }
             //Print user's score after the for loop is done
+            
+            float percentage = (totalScore /numberOfItems) * 100;
+
             Console.WriteLine("Your Total Score: " + totalScore);
+            Console.WriteLine("Percentage of Correct Answers: " + percentage + "%");
 
         }
 
